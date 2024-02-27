@@ -1,9 +1,6 @@
 const loginHandler = async (event) => {
-  event.preventDefault();
-
-
-const loginFormHandler = async (event) => {
     event.preventDefault();
+
   console.log('im here');
   
     const email = document.querySelector('#email-login').value.trim();
@@ -30,19 +27,28 @@ const loginFormHandler = async (event) => {
       } else {
           alert('Failed to log in');
       }
-<<<<<<< HEAD
     }
   };
   
-=======
-  }
-};
 
-
->>>>>>> 87b0931aa1fc510a12f1ed337e8c01e1cb8b3b93
   
-  document
-    .querySelector('form')
-    .addEventListener('submit', loginFormHandler);
+    const email = document.querySelector('#user-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
 
+    if (email && password) {
+        const response = await fetch('/api/users/login', {
+            method: 'POST',
+            body: JSON.stringify({ email: email, password: password }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+  
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to log in');
+        }
+    }
+  };
+  
+  document.querySelector('.login-form').addEventListener('submit', loginHandler);
   
