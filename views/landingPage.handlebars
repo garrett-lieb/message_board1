@@ -1,86 +1,72 @@
-<div class="flex h-screen">
-  <!-- Sidebar -->
-  <div class="flex flex-col w-64 bg-gray-800">
-    <!-- Sidebar content -->
-    <div class="site-navigation">
-      <div class="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto">
-        <!-- Logo -->
-        <div class="flex items-center justify-center h-16 text-white">
-          <h3><a href="/">BRIDGE_IT</a></h3>
-        </div>
-        <!-- Navigation Links -->
 
-        <nav class="flex-1">
-          <a href="/login"
-            class="block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700">Login</a>
-          <a href="/profile"
-            class="block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700">Profile</a>
-          <!-- search ID -->
-          <a href="#" id="search-form"
-            class="block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Search</a>
-          <span class="block px-4 py-2 mt-2 text-sm font-light text-white bg-gray-900 rounded-lg">Topics:</span>
-          <a href="/games"
-            class="block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Games</a>
-          <a href="/technology"
-            class="block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Technology</a>
-          <a href="/audio-visual"
-            class="block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Audio
-            &amp; Visual</a>
-          <a href="#"
-            class="block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Notifications</a>
-          <a href="#"
-            class="block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Settings</a>
 
-          <!-- Add more links as needed -->
-        </nav>
-        <div class='button-container'>
-          <button class="block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700"
-            id="logout">Logout</button>
-        </div>
-      </div>
+<section class="bg-white flex dark:bg-gray-900 py-8 lg:py-16 antialiased">
+  <div class="max-w-2xl mx-auto px-4">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-lg lg:text-2xl font-bold text-gray-900 dark:text-white">Topic {{games}}</h2>
     </div>
+    <form class="mb-6">
+        <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+            <label for="comment" class="sr-only">Your Post</label>
+            <textarea id="post" rows="6"
+                class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                placeholder="Write your post..." required></textarea>
+        </div>
+        <button type="submit"
+            class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-primary-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
+            Post it!
+        </button>
+    </form>
+ 
+    <div class="flex">
+      <!-- Content goes here -->
+      {{#each posts as |post|}}
+      <div class="p-5">
+        <div class="max-w-sm w-full lg:max-w-full lg:flex">
+          <div
+            class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+            style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug">{{post.topic}}{{post.id}}</div>
+          <div
+            class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+            <div class="mb-8">
+              <p class="text-sm text-gray-600 flex items-center">
+                <path
+                  d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
+                </svg>
+                Games
+              </p>
+              <div class="text-gray-900 font-bold text-xl mb-2">
+                {{post.title}}
+              </div>
+              <p class="text-gray-700 text-base">
+                
+                {{post.description}}
+                
+               
+              </p>
+              <div class="comment-list-container blocks-8ddn6w"></div>
 
-    <!-- Main Content -->
-
-
-
-
-  </div>
-  <div class="flex flex-col flex-1">
-    <!-- Posts and Content go here -->
-    <div class="p-5">
-      <div class="max-w-sm w-full lg:max-w-full lg:flex">
-        <div
-          class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-          style="background-image: url('/img/card-left.jpg')" title="Woman holding a mug"></div>
-        <div
-          class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-          <div class="mb-8">
-            <p class="text-sm text-gray-600 flex items-center">
-              <path
-                d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z" />
-              </svg>
-              Games
-            </p>
-            <div class="text-gray-900 font-bold text-xl mb-2">
-              Can coffee make you a better developer?
             </div>
-            <p class="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
-            </p>
-          </div>
-          <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full mr-4" src="/img/jonathan.jpg" alt="Avatar" />
-            <div class="text-sm">
-              <p class="text-gray-900 leading-none">Jonathan Reinink</p>
-              <p class="text-gray-600">Aug 18</p>
+            <div class="flex items-center">
+              <p class = 'avatar-container'>
+                {{initials}}
+              </p>
+              <div class="text-sm">
+                <p class="text-gray-900 leading-none">Posted by {{name}}</p>
+                <p class="text-gray-600">On {{formatDate post.date_created}}</p>
+              </div>
+              {{#each Comments as |comment|}}
+              <div class = 'block text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Post a comment{{comment.comment}}</div>
             </div>
+            {{/each}}
           </div>
         </div>
       </div>
+      {{/each}}
     </div>
   </div>
 
-</div>
+
+
+{{!-- <script src="./js/logout.js"></script> --}}
+<script src="/js/newPost.js"></script>
