@@ -1,22 +1,27 @@
 const newposthandler = async (event) => {
-    console.log('click');
     event.preventDefault();
+
+// const topic = document.querySelector('#topic').value.trim();
+const description = document.querySelector('#post').value.trim();
+if (description) {
+    const response = await fetch('/api/posts/', {
+        method: 'POST',
+        body: JSON.stringify({ description: description }),
+        headers: { 'Content-Type': 'application/json' },
+    });
+    console.log(response);
     
-    const title = document.querySelector('#title').value.trim();
-    const content = document.querySelector('#content').value.trim();
-    if (title && content) {
-        const response = await fetch('/api/postRoutes', {
-            method: 'POST',
-            body: JSON.stringify({ Topic: title, description: content }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        if (response.ok) {
-            document.location.replace('/profile');
-        }
-        else {
-            alert('Failed to create post');
-        }
+    if (response.ok) {
+        document.location.replace('/');
+       
+        console.log('Post created');
     }
+    else {
+        alert('Failed to create post');
+    }
+
+    console.log(response);
+}
 };
 
-document.querySelector('#create-post').addEventListener('submit', newposthandler);
+document.querySelector('form').addEventListener('submit', newposthandler);
