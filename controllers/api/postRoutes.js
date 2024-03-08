@@ -36,24 +36,24 @@ router.get('/:id', async (req, res) => {
 // create new post
 // commented this one out because we may not need it, dont delete just in case 
 
-// router.post('/', withAuth, async (req, res) => {
-//     try {
-//         const newPost = await Post.create({
-//             ...req.body,
-//             user_id: req.session.user_id
+router.post('/', withAuth, async (req, res) => {
+    try {
+        const newPost = await Post.create({
+            ...req.body,
+            user_id: req.session.user_id
             
-//         });
-//         console.log(newPost);
+        });
+        console.log(newPost);
         
-//         console.log("new post created");
-//         res.status(200).json(newPost);
+        console.log("new post created");
+        res.status(200).json(newPost);
       
-//     } catch (err) {
-//       console.error(err);
-//         res.status(500).json(err);
+    } catch (err) {
+      console.error(err);
+        res.status(500).json(err);
       
-//     }
-//   });
+    }
+  });
 
 
   router.post('/post', withAuth, async (req, res) => {

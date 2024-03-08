@@ -1,6 +1,6 @@
 const newcommentHandler = async (event) => {
     event.preventDefault();
-    const comment = document.querySelector('#comment').value.trim();
+    const comment = document.querySelector('#reply').value.trim();
     const blog_id = document.querySelector('input[name="post-id"]').value;
     console.log(comment);
     if (comment) {
@@ -10,7 +10,8 @@ const newcommentHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
         if (response.ok) {
-            document.location.replace(`/blogs/${blog_id}`);
+            // document.location.replace(`/blogs/${blog_id}`);
+            document.location.replace('/');
         }
         else {
             // redirect to login page
@@ -20,4 +21,4 @@ const newcommentHandler = async (event) => {
     console.log('comment:', comment);
 };
 
-document.querySelector('.comment-form').addEventListener('submit', newcommentHandler);
+document.querySelector(".reply-btn").addEventListener('submit', newcommentHandler);
