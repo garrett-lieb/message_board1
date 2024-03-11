@@ -62,7 +62,6 @@
       Share your knowledge!
     </button>
   </form>
-
   <article id="comment" class="p-6 mb-3 ml-6 lg:ml-12 text-base bg-white rounded-lg dark:bg-gray-900">
     <footer class="flex justify-between items-center mb-2">
       <div class="flex items-center">
@@ -71,7 +70,8 @@
             }} alt="{{user.name}}" />{{user.name}}
         </p>
         <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate {{comment comment.date_created}}
-            title>{{commnet comment.date_created}}</time>
+            title>{{commnet
+            comment.date_created}}</time>
         </p>
       </div>
     </footer>
@@ -86,4 +86,4 @@
 {{!
 <script src="./js/logout.js"></script> }}
 <script src="/js/newPost.js"></script>
-<script src=""/js/newComment.js"></script>
+<script src="/js/newComment.js"></script>
