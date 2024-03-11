@@ -22,17 +22,25 @@
     {{#each posts as |post|}}
 
     <article
-        class="outline-white p-6 text-base bg-white rounded-lg dark:bg-gray-900 border-2 border-white-500 my-px-6 space-y-10">
-        <footer class="flex justify-between items-center mb-2 ">
-            <div class="flex items-center border-white">
-                <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold"><img
-                        class="mr-2 w-6 h-6 rounded-full" {{!--
-                        src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" --}}
-                        alt="{{name}}">{{user.name}}
-                </p>
-                <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="{{post.date_created}}"
-                        title="{{formatDate post.date_created}}">Posted on.{{formatDate post.date_created}}</time>
-                </p>
+      class='outline-white p-6 text-base bg-white rounded-lg dark:bg-gray-900 border-2 border-white-500 my-px-6 space-y-10'
+    >
+      <footer class='flex justify-between items-center mb-2'>
+        <div class='flex items-center border-white'>
+          <p
+            class='inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white font-semibold'
+          ><img
+              class='mr-2 w-6 h-6 rounded-full'
+              {{!
+                        src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" }}
+              alt='{{name}}'
+            />{{user.name}}
+          </p>
+          <p class='text-sm text-gray-600 dark:text-gray-400'><time
+              pubdate
+              datetime='{{post.date_created}}'
+              title='{{formatDate post.date_created}}'
+            >Post date{{formatDate post.date_created}}</time>
+          </p>
             </div>
         </footer>
         <p class="text-gray-500 dark:text-gray-400">{{post.description}}.</p>
