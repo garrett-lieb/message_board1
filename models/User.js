@@ -2,7 +2,6 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-
 class User extends Model {
   // Checks the password against the encrypted password in the database.
   checkPassword(loginPw) {
@@ -23,9 +22,9 @@ User.init(
       allowNull: false,
     },
     initials: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        },
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -50,7 +49,10 @@ User.init(
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10,
+        );
         return updatedUserData;
       },
     },
@@ -59,9 +61,7 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
-  }
+  },
 );
-
-
 
 module.exports = User;
