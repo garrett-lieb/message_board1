@@ -33,7 +33,6 @@ Topic.init(
         key: 'id',
       },
     },
-    
   },
   {
     sequelize,
@@ -41,7 +40,7 @@ Topic.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'topic',
-  }
+  },
 );
 
 module.exports = Topic;
