@@ -29,24 +29,24 @@
           <!-- Navigation Links -->
           <nav>
             <a href='/login'
-                class='block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Login</a>
-            
-             <a href='/profile'
-                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Profile</a>
-            
+              class='block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Login</a>
+
+            <a href='/profile'
+              class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Profile</a>
+
             <span class='block px-10 py-2 mt-2 text-sm font-light text-white bg-gray-900 rounded-lg'>Topics:</span>
-             <a href='/games'
-                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Games</a>
-            
+            <a href='/games'
+              class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Games</a>
+
             <a href='/technology'
-                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Technology</a>
-            
+              class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Technology</a>
+
             <a href='/audio-visual'
-                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Audio
-                &amp; Visual</a>
-           
-          </nav>
-          <!-- Add more links as needed 
+              class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Audio
+              &amp; Visual</a>
+
+
+            <!-- Add more links as needed 
             {{! <a href="/profile"
               class="block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700">Profile</a>      
              <a href='#' id='search-form'
@@ -57,10 +57,11 @@
               class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Settings</a>
               -->
 
-          <div class='button-container'>
-            <button id='logout'
-              class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Logout</button>
-          </div>
+            <div class='button-container'>
+              <button id='logout'
+                class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Logout</button>
+            </div>
+          </nav>
         </div>
       </div>
     </div>
@@ -82,7 +83,7 @@
     </div>
   </footer>
 
-  <div class="login">
+  <div>
     {{#if logged_in}}
     <script src='./js/logout.js'></script>
     {{/if}}
