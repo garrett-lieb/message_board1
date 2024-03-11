@@ -13,9 +13,9 @@
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 
-<body>
+<body class="flex flex-col min-h-screen">
 
-  <main class="container flex">
+  <main class="container flex-grow">
 
     <!-- Sidebar -->
     <div class=" w-64 bg-gray-800 h-lvh">
@@ -72,8 +72,8 @@
         <div>
           {{{body}}}
         </div>
-
       </div>
+    </div>
 
   </main>
 
@@ -84,8 +84,8 @@
   {{/if}}
 
 
-  <footer class="absolute-bottom">
-    <div class="flex flex-row justify-center m-6  w-full">
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900 mt-auto">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
       <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         © 2024 <a href="https://github.com/garrett-lieb/message_board1.git" class="hover:underline">BRIDGE_IT</a>. All
         Rights Reserved.
