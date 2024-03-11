@@ -33,19 +33,47 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// create new post
+// commented this one out because we may not need it, dont delete just in case 
+
 router.post('/', withAuth, async (req, res) => {
-  try {
-      const newPost = await Post.create({
-          ...req.body,
-          user_id: req.session.user_id,
-      });
-      console.log(newPost);
-      res.status(200).json(newPost);
-  } catch (err) {
-    console.error(err);
-      res.status(400).json(err);
+    try {
+        const newPost = await Post.create({
+            ...req.body,
+            user_id: req.session.user_id
+            
+        });
+        console.log(newPost);
+        
+        console.log("new post created");
+        res.status(200).json(newPost);
+      
+    } catch (err) {
+      console.error(err);
+        res.status(500).json(err);
+      
+    }
+  });
+
+
+  router.post('/post', withAuth, async (req, res) => {
+    const { topic, description } = req.body;
+  if (!req.session.user) {
+     return res.status(401).json({ message: 'You must be logged in to create a post'});
+     return res.redirect('/login')
   }
-});
+  
+  const newPost = await Post.create({
+     topic,
+     description,
+     user_id: req.session.user_id
+  });
+ 
+  if(!topic || !description) {
+          return res.status(400).json({ message: 'Please provide a topic and description for your post'})
+  } else {
+      res.status(200).json({ message: 'Post created succesfully' });
+  }});
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
