@@ -23,34 +23,41 @@
       <div class='site-navigation'>
         <div class='pt-5 pb-4 overflow-y-auto'>
           <!-- Logo -->
-          <div class='flex items-center justify-center h-16 text-white'>
-            <h1><a href='/'>BRIDGE_IT</a></h1>
+          <div class='flex items-center font-bold justify-center h-16 text-white'>
+            <span><a href='/'>BRIDGE_IT</a></span>
           </div>
-          <!-- Navigation Links -->
 
+          <!-- Navigation Links -->
           <nav>
-            <a href='/login'
-              class='block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Login</a>
-            {{! <a href="/profile"
-              class="block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700">Profile</a>
-            <!-- search ID --> }}
-            <a href='#' id='search-form'
-              class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Search</a>
+            <span> <a href='/login'
+                class='block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Login</a>
+            </span>
+            <span> <a href='/profile'
+                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Profile</a>
+            </span>
             <span class='block px-10 py-2 mt-2 text-sm font-light text-white bg-gray-900 rounded-lg'>Topics:</span>
-            <a href='/games'
-              class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Games</a>
-            <a href='/technology'
-              class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Technology</a>
-            <a href='/audio-visual'
-              class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Audio
-              &amp; Visual</a>
+            <span> <a href='/games'
+                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Games</a>
+            </span>
+            <span> <a href='/technology'
+                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Technology</a>
+            </span>
+            <span> <a href='/audio-visual'
+                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Audio
+                &amp; Visual</a>
+            </span>
+          </nav>
+          <!-- Add more links as needed 
+            {{! <a href="/profile"
+              class="block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700">Profile</a>      
+             <a href='#' id='search-form'
+              class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Search</a>
             <a href='#'
               class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Notifications</a>
             <a href='#'
               class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Settings</a>
+              -->
 
-            <!-- Add more links as needed -->
-          </nav>
           <div class='button-container'>
             <button id='logout'
               class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Logout</button>
@@ -59,7 +66,7 @@
       </div>
     </div>
     <div class='container pl-40'>
-      <div>
+      <div class="site-body">
         {{{body}}}
       </div>
     </div>
@@ -76,10 +83,11 @@
     </div>
   </footer>
 
-  {{#if logged_in}}
-  <script src='./js/logout.js'></script>
-  {{/if}}
-
+  <div class="login">
+    {{#if logged_in}}
+    <script src='./js/logout.js'></script>
+    {{/if}}
+  </div>
 </body>
 
 </html>
