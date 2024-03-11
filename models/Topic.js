@@ -33,7 +33,7 @@ Topic.init(
         key: 'id',
       },
     },
-
+    
   },
   {
     sequelize,

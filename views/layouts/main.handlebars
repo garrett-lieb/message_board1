@@ -1,93 +1,85 @@
-<html lang='en'>
 
+    <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <title>BRIDGE_IT</title>
-  <link rel='stylesheet' href='styles.css' />
-  <script src='https://cdn.tailwindcss.com'></script>
-  <script src='https://code.jquery.com/jquery-3.5.1.min.js'
-    integrity='sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=' crossorigin='anonymous'></script>
-  <link rel='stylesheet' href='//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css' />
-  <script src='https://code.jquery.com/jquery-3.6.0.js'></script>
-  <script src='https://code.jquery.com/ui/1.13.2/jquery-ui.js'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
 
 <body>
 
-  <main class='container flex'>
-
+    <main class = "container flex">
+    
     <!-- Sidebar -->
-    <div class='w-64 bg-gray-800'>
+    <div class=" w-64 bg-gray-800">
       <!-- Sidebar content -->
-      <div class='site-navigation'>
-        <div class='pt-5 pb-4 overflow-y-auto'>
+      <div class="site-navigation">
+        <div class= "pt-5 pb-4 overflow-y-auto">
           <!-- Logo -->
-          <div class='flex items-center font-bold justify-center h-16 text-white'>
-            <span><a href='/'>BRIDGE_IT</a></span>
+          <div class="flex items-center justify-center h-16 text-white">
+            <h3><a href="/">BRIDGE_IT</a></h3>
           </div>
-
           <!-- Navigation Links -->
-          <nav>
-            <span> <a href='/login'
-                class='block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Login</a>
-            </span>
-            <span> <a href='/profile'
-                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Profile</a>
-            </span>
-            <span class='block px-10 py-2 mt-2 text-sm font-light text-white bg-gray-900 rounded-lg'>Topics:</span>
-            <span> <a href='/games'
-                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Games</a>
-            </span>
-            <span> <a href='/technology'
-                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Technology</a>
-            </span>
-            <span> <a href='/audio-visual'
-                class='block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Audio
-                &amp; Visual</a>
-            </span>
-          </nav>
-          <!-- Add more links as needed 
-            {{! <a href="/profile"
-              class="block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700">Profile</a>      
-             <a href='#' id='search-form'
-              class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Search</a>
-            <a href='#'
-              class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Notifications</a>
-            <a href='#'
-              class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Settings</a>
-              -->
 
-          <div class='button-container'>
-            <button id='logout'
-              class='block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700'>Logout</button>
-          </div>
+          <nav>
+            <a href="/login"
+              class="block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700">Login</a>
+            {{!-- <a href="/profile"
+              class="block px-4 py-2 mt-2 mb-8 text-sm font-bold text-white bg-gray-900 rounded-lg hover:bg-gray-700">Profile</a>
+            <!-- search ID --> --}}
+            <a href="#" id="search-form"
+              class="block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Search</a>
+            <span class="block px-10 py-2 mt-2 text-sm font-light text-white bg-gray-900 rounded-lg">Topics:</span>
+            <a href="/games"
+              class="block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Games</a>
+            <a href="/technology"
+              class="block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Technology</a>
+            <a href="/audio-visual"
+              class="block px-10 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Audio
+              & Visual</a>
+            <a href="#"
+              class="block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Notifications</a>
+            <a href="#"
+              class="block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Settings</a>
+
+            <!-- Add more links as needed -->
+          </nav>
+          <div class ='button-container '>
+            <button id='logout' class="block px-4 py-2 mt-2 text-sm font-medium text-white bg-gray-900 rounded-lg hover:bg-gray-700">Logout</button>
+            </div>  
         </div>
       </div>
     </div>
-    <div class='container pl-40'>
-      <div class="site-body">
-        {{{body}}}
-      </div>
+    <div class="container pl-40">
+      <div>
+        <div>
+          {{{body}}}
+        </div>
+    
     </div>
-
+  
   </main>
 
-  <footer>
-    <div class='flex flex-row justify-center grid mx-4 mb-4'>
-      <span class='text-sm text-gray-500 sm:text-center dark:text-gray-400'>
-        © 2024
-        <a href='https://github.com/garrett-lieb/message_board1' class='hover:underline'>BRIDGE_IT</a>. All Rights
-        Reserved.
-      </span>
-    </div>
-  </footer>
 
-  <div class="login">
-    {{#if logged_in}}
-    <script src='./js/logout.js'></script>
-    {{/if}}
-  </div>
+
+  {{#if logged_in}}
+  <script src="./js/logout.js"></script>
+  {{/if}}
 </body>
+
+  <footer class="absolute-bottom ">
+    <div class="flex flex-row justify-center m-6">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        © 2024 <a href="https://github.com/garrett-lieb/message_board1.git" class="hover:underline">BRIDGE_IT</a>. All Rights Reserved.
+      </span>
+  </footer>
 
 </html>
